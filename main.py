@@ -44,7 +44,7 @@ def get_grounding_output(model, image, caption, box_threshold, text_threshold=No
     caption = caption.strip()
     if not caption.endswith("."):
         caption = caption + "."
-    device = "cuda" if not torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     model = model.to(device)
     image = image.to(device)
     with torch.no_grad():
